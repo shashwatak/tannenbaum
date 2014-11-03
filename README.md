@@ -34,11 +34,11 @@ tannenbaum
     - id
     - timestamp
     - value (points/second)
-  - agent
-    - id
-    - balance
   - portfolio
     - agentId
+    - balance
+  - position
+    - portfolioID
     - securityID
     - numShares
   - bid
@@ -78,7 +78,7 @@ tannenbaum
       - updateSecurities()
         - Reads all pending bids and updates bids, securities
       - updateSecurity(id, value)
-  - Agent (DAO)
+  - Agent
     - Class functions
       - create()
     - Functions
@@ -98,8 +98,9 @@ tannenbaum
     - Functions
       - getCurrentValue()
         - Returns: value
-  - Bid (DAO)
   - Portfolio (DAO)
+  - Position (DAO)
+  - Bid (DAO)
   - Window (optional)
     - period (numTicks)
     - high
