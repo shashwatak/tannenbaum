@@ -16,7 +16,9 @@ class Economy:
     tweets = stream.statuses.sample()
     for tweet in tweets:
       if "entities" in tweet:
-        print [hashtag["text"] for hashtag in tweet["entities"]["hashtags"]]
+        hashtags = [hashtag["text"] for hashtag in tweet["entities"]["hashtags"]]
+        timestamp = tweet["timestamp_ms"]
+        print "{0}: {1}".format(timestamp, hashtags)
       else:
         print "<invalid>"
 
