@@ -48,14 +48,18 @@ tannenbaum
     - timestamp
     - status (pending, executed, rejected)
 - Classes
+  - Server (Flask)
+    - Serves API
   - Economy
     - Members
       - updateQueue
+      - timeBetweenTicks (milliseconds)
+      - lastTick (timestamp)
     - Functions
-      - updateValues()
-        - Flushes queue, and updates storage
-      - collect()
-        - Opens persistent connection to data source, starts adding to queue
+      - run()
+        "Process"
+        - Reads from persistent connection to data source
+        - Adds to entities
       - getEntity(id)
       - updateEntity(id, dValue)
         - Creates entity if not exists
@@ -64,6 +68,11 @@ tannenbaum
         - Returns: [id]
   - Index
     - Functions
+      - run()
+        "Process"
+        - Read from entities
+        - For entities that need tick
+          - Update security
       - addBid(bid)
         - Adds to Storage (bid table)
       - updateSecurities()
