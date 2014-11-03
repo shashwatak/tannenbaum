@@ -28,20 +28,22 @@ tannenbaum
   "Database tables"
   - securities
     - id
-    - tick
+    - timestamp
     - price
   - entities
     - id
     - timestamp
     - value (points/second)
   - portfolio
-    - agentId
+    - id
     - balance
   - position
     - portfolioID
     - securityID
     - numShares
   - bid
+    - portfolioID
+    - securityID
     - type (buy/sell)
     - minValue
     - maxValue
